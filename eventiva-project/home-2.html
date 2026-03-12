@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2 | Eventiva - Alternative Landing</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .hero-2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=2000') center/cover;
+            padding-top: 100px;
+        }
+        .gallery-item {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 49, 140, 0.4);
+            opacity: 0;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .insta-item {
+            transition: var(--transition);
+            cursor: pointer;
+            height: 160px;
+        }
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .insta-item:hover {
+            opacity: 0.8;
+            transform: translateY(-5px);
+        }
+        .sponsor-logo {
+            transition: var(--transition);
+        }
+        .sponsor-logo:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Same as index.html) -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <span class="fw-bold fs-3 text-primary">EVENTIVA</span>
+                </a>
+                
+                <div class="d-flex align-items-center order-lg-3">
+                    <button id="themeToggle" class="theme-toggle me-3">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline-primary me-2 d-none d-sm-inline-block">Login</a>
+                    <a href="register.html" class="btn btn-primary d-none d-sm-inline-block">Sign Up</a>
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                        <i class="bi bi-list fs-1"></i>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Events
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html#speakers">Speakers</a></li>
+                                <li><a class="dropdown-item" href="index.html#schedule">Schedule</a></li>
+                                <li><a class="dropdown-item" href="index.html#admission">Tickets</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Offcanvas Mobile Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold text-primary">EVENTIVA</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column mb-4">
+                <li class="nav-item"><a class="nav-link px-0" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="home-2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="index.html#speakers">Speakers</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="index.html#schedule">Schedule</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn btn-outline-primary">Login</a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="hero-2 text-center text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h1 class="display-1 fw-extrabold mb-4">Experience the <span class="text-primary italic">Pulse</span> of Tomorrow</h1>
+                        <p class="lead mb-5 fs-4">A niche gathering for visionaries, creators, and enthusiasts. Join the inner circle to explore the next generation of digital arts and networking.</p>
+                        <div class="d-flex justify-content-center gap-4">
+                            <a href="#" class="btn btn-primary btn-lg px-5">Join the Waitlist</a>
+                            <a href="#" class="btn btn-outline-light btn-lg px-5">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=1000" class="img-fluid rounded-4 shadow-lg" alt="Feature Image">
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h2 class="display-5 mb-4">Why Home 2 is <span class="text-primary">Different</span></h2>
+                        <ul class="list-unstyled">
+                            <li class="mb-4 d-flex">
+                                <i class="bi bi-check-circle-fill text-primary mt-1 me-3 fs-3"></i>
+                                <div>
+                                    <h4>Custom Experience</h4>
+                                    <p class="opacity-75">We tailor every aspect of the event to meet our audience's creative needs.</p>
+                                </div>
+                            </li>
+                            <li class="mb-4 d-flex">
+                                <i class="bi bi-check-circle-fill text-primary mt-1 me-3 fs-3"></i>
+                                <div>
+                                    <h4>Community Focused</h4>
+                                    <p class="opacity-75">Direct interactions and networking opportunities that you won't find anywhere else.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5 bg-alt">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-3" data-aos="zoom-in" data-aos-delay="0">
+                        <div class="glass-card p-4 rounded-4 text-center">
+                            <h2 class="text-gradient mb-1">50+</h2>
+                            <p class="mb-0 opacity-75 small text-uppercase fw-bold">Designers</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="glass-card p-4 rounded-4 text-center">
+                            <h2 class="text-gradient mb-1">20+</h2>
+                            <p class="mb-0 opacity-75 small text-uppercase fw-bold">Live Panels</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="glass-card p-4 rounded-4 text-center">
+                            <h2 class="text-gradient mb-1">2000+</h2>
+                            <p class="mb-0 opacity-75 small text-uppercase fw-bold">Creatives</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="glass-card p-4 rounded-4 text-center">
+                            <h2 class="text-gradient mb-1">15+</h2>
+                            <p class="mb-0 opacity-75 small text-uppercase fw-bold">Exhibitions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers Section -->
+        <section class="py-5" id="speakers">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary fw-bold text-uppercase small" data-aos="fade-up">Visionary Talent</span>
+                    <h2 class="display-5 mt-2" data-aos="fade-up" data-aos-delay="100">Featured <span class="text-gradient">Speakers</span></h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="card p-0 overflow-hidden border-0 bg-transparent speaker-card">
+                            <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 speaker-img" alt="Speaker">
+                                <div class="speaker-overlay">
+                                    <div class="social-links d-flex gap-2">
+                                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="mb-1">Dr. Elena Rostova</h4>
+                                <p class="text-primary small fw-bold">AI Ethicist</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card p-0 overflow-hidden border-0 bg-transparent speaker-card">
+                            <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                <img src="https://images.unsplash.com/photo-1558222218-b7b54eede3f3?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 speaker-img" alt="Speaker">
+                                <div class="speaker-overlay">
+                                    <div class="social-links d-flex gap-2">
+                                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="mb-1">Julian Marks</h4>
+                                <p class="text-primary small fw-bold">Digital Architect</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card p-0 overflow-hidden border-0 bg-transparent speaker-card">
+                            <div class="position-relative overflow-hidden rounded-4 mb-3">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 speaker-img" alt="Speaker">
+                                <div class="speaker-overlay">
+                                    <div class="social-links d-flex gap-2">
+                                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                                        <a href="#"><i class="bi bi-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="mb-1">Sophie Chen</h4>
+                                <p class="text-primary small fw-bold">Visual Storyteller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section class="py-5 bg-alt" id="schedule">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary fw-bold text-uppercase small" data-aos="fade-up">What's Happening</span>
+                    <h2 class="display-5 mt-2" data-aos="fade-up" data-aos-delay="100">Event <span class="text-gradient">Schedule</span></h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="glass-card p-4 rounded-4 border-0" data-aos="fade-up">
+                            <div class="schedule-item d-flex align-items-center p-4 border-bottom" style="border-color: var(--border-color) !important;">
+                                <div class="time-box me-4 text-center">
+                                    <span class="fw-800 text-primary d-block fs-4">10:00</span>
+                                    <span class="small opacity-50">AM</span>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-1">Doors Open & Registration</h5>
+                                    <p class="mb-0 opacity-75 small">Lobby Lounge</p>
+                                </div>
+                            </div>
+                            <div class="schedule-item d-flex align-items-center p-4 border-bottom" style="border-color: var(--border-color) !important;">
+                                <div class="time-box me-4 text-center">
+                                    <span class="fw-800 text-primary d-block fs-4">11:30</span>
+                                    <span class="small opacity-50">AM</span>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-1">Keynote: The Future of Creativity</h5>
+                                    <p class="mb-0 opacity-75 small">Grand Auditorium</p>
+                                </div>
+                            </div>
+                            <div class="schedule-item d-flex align-items-center p-4">
+                                <div class="time-box me-4 text-center">
+                                    <span class="fw-800 text-primary d-block fs-4">02:00</span>
+                                    <span class="small opacity-50">PM</span>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-1">Networking Lunch & Exhibition</h5>
+                                    <p class="mb-0 opacity-75 small">Social Hall</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-5" id="pricing">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary fw-bold text-uppercase small" data-aos="fade-up">Join Us</span>
+                    <h2 class="display-5 mt-2" data-aos="fade-up" data-aos-delay="100">Secure Your <span class="text-gradient">Spot</span></h2>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6" data-aos="fade-right">
+                        <div class="glass-card p-5 rounded-4 text-center h-100 d-flex flex-column">
+                            <h3 class="mb-4">Standard</h3>
+                            <h1 class="display-4 fw-800 text-gradient mb-4">$49</h1>
+                            <ul class="list-unstyled mb-5 text-start opacity-75">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Main Hall Access</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Basic Workshops</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Event Badge</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100 mt-auto">Select Plan</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-left">
+                        <div class="glass-card p-5 rounded-4 text-center h-100 border-primary d-flex flex-column">
+                            <h3 class="mb-4">Premium</h3>
+                            <h1 class="display-4 fw-800 text-gradient mb-4">$129</h1>
+                            <ul class="list-unstyled mb-5 text-start opacity-75">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>VIP Inner Circle</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>All Workshops & Labs</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Priority Entry</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Special Gift Pack</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100 mt-auto">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-5 bg-alt" id="gallery">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary fw-bold text-uppercase small" data-aos="fade-up">Visual Journey</span>
+                    <h2 class="display-5 mt-2" data-aos="fade-up" data-aos-delay="100">Event <span class="text-gradient">Highlights</span></h2>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4 col-sm-6" data-aos="zoom-in">
+                        <div class="gallery-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 h-100 object-fit-cover" alt="Gallery 1" style="min-height: 250px;">
+                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                                <i class="bi bi-plus-lg text-white fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="gallery-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 h-100 object-fit-cover" alt="Gallery 2" style="min-height: 250px;">
+                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                                <i class="bi bi-plus-lg text-white fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="gallery-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 h-100 object-fit-cover" alt="Gallery 3" style="min-height: 250px;">
+                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                                <i class="bi bi-plus-lg text-white fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="gallery-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 h-100 object-fit-cover" alt="Gallery 4" style="min-height: 250px;">
+                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                                <i class="bi bi-plus-lg text-white fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="gallery-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 h-100 object-fit-cover" alt="Gallery 5" style="min-height: 250px;">
+                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                                <i class="bi bi-plus-lg text-white fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="gallery-item rounded-4 overflow-hidden position-relative">
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=600" class="img-fluid w-100 h-100 object-fit-cover" alt="Gallery 6" style="min-height: 250px;">
+                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                                <i class="bi bi-plus-lg text-white fs-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5 bg-alt">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5" data-aos="fade-up">Echoes from <span class="text-gradient">Visionaries</span></h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="glass-card p-4 rounded-4 border-0 h-100 d-flex flex-column">
+                            <p class="fst-italic opacity-75 mb-4">"The Home 2 experience is something truly unique. The focus on networking and deep creative dives is exactly what I was looking for."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=60" class="rounded-circle me-3" alt="Client">
+                                <div>
+                                    <h6 class="mb-0">Sarah Thompson</h6>
+                                    <span class="small opacity-50">Creative Director</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="glass-card p-4 rounded-4 border-0 h-100 d-flex flex-column">
+                            <p class="fst-italic opacity-75 mb-4">"I've attended many events, but the intimacy and quality of speakers here are unmatched. Home 2 really stands out in the industry."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=60" class="rounded-circle me-3" alt="Client">
+                                <div>
+                                    <h6 class="mb-0">Marcus Webb</h6>
+                                    <span class="small opacity-50">Tech Lead</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors Section -->
+        <section class="py-5" id="sponsors">
+            <div class="container text-center">
+                <span class="text-primary fw-bold text-uppercase small mb-5 d-block" data-aos="fade-up">Collaborating Partners</span>
+                <div class="row align-items-center g-4 justify-content-center">
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="flip-left" data-aos-delay="0">
+                        <div class="glass-card p-3 rounded-4 d-flex align-items-center justify-content-center sponsor-logo" style="height: 100px;">
+                            <i class="bi bi-nvidia fs-1 text-success opacity-75"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="flip-left" data-aos-delay="100">
+                        <div class="glass-card p-3 rounded-4 d-flex align-items-center justify-content-center sponsor-logo" style="height: 100px;">
+                            <i class="bi bi-microsoft fs-1 text-info opacity-75"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="flip-left" data-aos-delay="200">
+                        <div class="glass-card p-3 rounded-4 d-flex align-items-center justify-content-center sponsor-logo" style="height: 100px;">
+                            <i class="bi bi-google fs-1 text-primary opacity-75"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="flip-left" data-aos-delay="300">
+                        <div class="glass-card p-3 rounded-4 d-flex align-items-center justify-content-center sponsor-logo" style="height: 100px;">
+                            <i class="bi bi-apple fs-1 text-secondary opacity-75"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="flip-left" data-aos-delay="400">
+                        <div class="glass-card p-3 rounded-4 d-flex align-items-center justify-content-center sponsor-logo" style="height: 100px;">
+                            <i class="bi bi-spotify fs-1 text-success opacity-75"></i>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="flip-left" data-aos-delay="500">
+                        <div class="glass-card p-3 rounded-4 d-flex align-items-center justify-content-center sponsor-logo" style="height: 100px;">
+                            <i class="bi bi-meta fs-1 text-primary opacity-75"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Feed Section -->
+        <section class="py-5 bg-alt">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-5" data-aos="fade-up">
+                    <h3 class="mb-0">Follow <span class="text-primary">@eventiva</span></h3>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4">Visit Instagram</a>
+                </div>
+                <div class="row g-2">
+                    <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="0">
+                        <div class="insta-item rounded-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=200" class="img-fluid w-100" alt="Insta 1">
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="100">
+                        <div class="insta-item rounded-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80&w=200" class="img-fluid w-100" alt="Insta 2">
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="200">
+                        <div class="insta-item rounded-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&q=80&w=200" class="img-fluid w-100" alt="Insta 3">
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="300">
+                        <div class="insta-item rounded-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=200" class="img-fluid w-100" alt="Insta 4">
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="400">
+                        <div class="insta-item rounded-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&q=80&w=200" class="img-fluid w-100" alt="Insta 5">
+                        </div>
+                    </div>
+                    <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="500">
+                        <div class="insta-item rounded-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=200" class="img-fluid w-100" alt="Insta 6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-primary fw-bold mb-4">EVENTIVA</h4>
+                    <p>The premier event platform for music, arts, and creative gatherings worldwide.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Company</h5>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="services.html" class="footer-link">Our Services</a>
+                    <a href="pricing.html" class="footer-link">Pricing Plans</a>
+                    <a href="blog.html" class="footer-link">Recent News</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Support</h5>
+                    <a href="contact.html" class="footer-link">Help Center</a>
+                    <a href="contact.html" class="footer-link">FAQ</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Newsletter</h5>
+                    <p>Stay updated with our latest news and event notifications.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" type="button">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="opacity-25">
+            <div class="row align-items-center mt-4">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2026 Eventiva. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <button class="btn btn-link text-decoration-none text-light p-0 me-3">Privacy</button>
+                    <button class="btn btn-link text-decoration-none text-light p-0">Terms</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Eventiva</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100 py-5">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-8">
+                <div class="text-center mb-4">
+                    <a href="index.html" class="fw-bold fs-2 text-primary text-decoration-none">EVENTIVA</a>
+                </div>
+                <div class="card p-5 shadow-lg">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold">Create Account</h2>
+                        <p class="text-theme opacity-75">Join our community and get access to the best events.</p>
+                    </div>
+                    <form action="dashboard.html">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" class="form-control form-control-lg bg-theme text-theme" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Email Address</label>
+                            <input type="email" class="form-control form-control-lg bg-theme text-theme" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Password</label>
+                            <input type="password" class="form-control form-control-lg bg-theme text-theme" placeholder="••••••••" required>
+                        </div>
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="terms" required>
+                            <label class="form-check-label small text-theme" for="terms">I agree to the <a href="#" class="text-primary text-decoration-none">Terms & Conditions</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-3 fw-bold mb-4">Sign Up</button>
+                    </form>
+                    
+                    <div class="text-center position-relative mb-4">
+                        <hr class="opacity-25">
+                        <span class="position-absolute top-50 start-50 translate-middle px-3 bg-card-theme" style="z-index: 1;">OR</span>
+                    </div>
+
+                    <div class="d-grid gap-2 mb-4">
+                        <button class="btn btn-outline-auth py-2"><i class="bi bi-google me-2"></i> Sign Up with Google</button>
+                    </div>
+
+                    <p class="text-center mb-0 text-theme opacity-75 small">
+                        Already have an account? <a href="login.html" class="text-primary text-decoration-none fw-bold">Sign In</a>
+                    </p>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="index.html" class="text-decoration-none opacity-50 small"><i class="bi bi-arrow-left me-1"></i> Back to Homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle Fixed -->
+    <div class="position-fixed top-0 end-0 p-3">
+        <button id="themeToggle" class="theme-toggle">
+            <i class="bi bi-sun-fill"></i>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
